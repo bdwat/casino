@@ -357,28 +357,32 @@ void jogarAdivinha(int *dinheiro) {
                 while (1) {
                     printf("\nDigite um número de 1 a 10\n");
                     scanf("%d", &palpite);
-                    if (tentativas < 2) {
-                        if (palpite > numero_secreto) {
-                            printf("O número secreto é menor que %d\n", palpite);
-                            tentativas++;
-                            printf("%d tentativas restantes\n\n", 3 - tentativas);
-                        } else if (palpite < numero_secreto) {
-                            printf("O número secreto é maior que %d\n", palpite);
-                            tentativas++;
-                            printf("%d tentativas restantes\n\n", 3 - tentativas);
-                        } else {
-                            printf("Você acertou!\n");
-                            *dinheiro += 1.5 * aposta;
+                    if(palpite > 10 || palpite < 0){
+                        continue;
+                    }else{
+                        if (tentativas < 2) {
+                            if (palpite > numero_secreto) {
+                                printf("O número secreto é menor que %d\n", palpite);
+                                tentativas++;
+                                printf("%d tentativas restantes\n\n", 3 - tentativas);
+                            } else if (palpite < numero_secreto) {
+                                printf("O número secreto é maior que %d\n", palpite);
+                                tentativas++;
+                                printf("%d tentativas restantes\n\n", 3 - tentativas);
+                            } else {
+                                printf("Você acertou!\n");
+                                *dinheiro += 1.5 * aposta;
+                                break;
+                            }
+                        } else if (tentativas == 2) {
+                            if (palpite == numero_secreto) {
+                                printf("Você acertou!\n");
+                                *dinheiro += 1.5 * aposta;
+                            } else {
+                                printf("Você perdeu, o número secreto era %d\n", numero_secreto);
+                            }
                             break;
                         }
-                    } else if (tentativas == 2) {
-                        if (palpite == numero_secreto) {
-                            printf("Você acertou!\n");
-                            *dinheiro += 1.5 * aposta;
-                        } else {
-                            printf("Você perdeu, o número secreto era %d\n", numero_secreto);
-                        }
-                        break;
                     }
                 }
             }
