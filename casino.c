@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#ifdef _WIN32
+#include <conio.h>
+#else
+#define clrscr() printf("\e[1;1H\e[2J")
+#endif
 
 char* cavalos() {
     char* cavaloVencedor = malloc(20 * sizeof(char));
@@ -89,7 +94,7 @@ void jogarCorridaCavalos(int *dinheiro) {
                 }
             }
         } else if (sair == 'X' || sair == 'x') {
-            printf("\e[1;1H\e[2J");
+            clrscr();
             break;
         } else {
             printf("Comando inválido\n");
@@ -232,7 +237,7 @@ void jogarBlackJack(int *dinheiro) {
                 }
             }
         }else if(sair == 'X' || sair == 'x'){
-            printf("\e[1;1H\e[2J");
+            clrscr();
             break;
         }else{
             printf("Comando inválido");
@@ -315,7 +320,7 @@ void jogarRoulette(int *dinheiro) {
                 }
             }
         } else if(sair == 'x' || sair == 'X') {
-            printf("\e[1;1H\e[2J");
+            clrscr();
             break;
         } else {
             printf("Comando inválido\n");
@@ -378,7 +383,7 @@ void jogarAdivinha(int *dinheiro) {
                 }
             }
         } else if(sair == 'X' || sair == 'x') {
-            printf("\e[1;1H\e[2J");
+            clrscr();
             break;
         } else {
             printf("Comando inválido\n");
