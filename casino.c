@@ -89,6 +89,7 @@ void jogarCorridaCavalos(int *dinheiro) {
                 }
             }
         } else if (sair == 'X' || sair == 'x') {
+            printf("\e[1;1H\e[2J");
             break;
         } else {
             printf("Comando inválido\n");
@@ -231,6 +232,7 @@ void jogarBlackJack(int *dinheiro) {
                 }
             }
         }else if(sair == 'X' || sair == 'x'){
+            printf("\e[1;1H\e[2J");
             break;
         }else{
             printf("Comando inválido");
@@ -313,6 +315,7 @@ void jogarRoulette(int *dinheiro) {
                 }
             }
         } else if(sair == 'x' || sair == 'X') {
+            printf("\e[1;1H\e[2J");
             break;
         } else {
             printf("Comando inválido\n");
@@ -375,6 +378,7 @@ void jogarAdivinha(int *dinheiro) {
                 }
             }
         } else if(sair == 'X' || sair == 'x') {
+            printf("\e[1;1H\e[2J");
             break;
         } else {
             printf("Comando inválido\n");
