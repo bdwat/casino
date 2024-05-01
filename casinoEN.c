@@ -37,7 +37,7 @@ char* horse() {
     return winnerHorse;
 }
 
-// Função para liberar a memória alocada dinamicamente para o horse Winner
+//Function to free the dinamicaly alocated memory for winnerHorse
 void free_winnerHorse(char* winnerHorse) {
     free(winnerHorse);
 }
@@ -54,7 +54,7 @@ void playHorsesRace(int *money) {
             printf("Make your bet (min. $150)\n");
             printf("Current balance: $%d\n", *money);
             scanf("%d", &bet);
-            while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
+            while ((c = getchar()) != '\n' && c != EOF); // Clear buffer
 
             if (bet < 150) {
                 printf("The minimum bet is $150, try again.\n\n");
@@ -69,7 +69,7 @@ void playHorsesRace(int *money) {
                     printf("Make your bet:\n");
                     printf("1.Lightninh   2.Bolt   3.Verstappen   4.Senna   5.Lewis  6.Cancelar\n");
                     scanf("%d", &decision);
-                    while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
+                    while ((c = getchar()) != '\n' && c != EOF); // Clear buffer
 
                     if (decision >= 1 && decision <= 5) {
                         if (strcmp(winnerHorse, "Lightning") == 0 && decision == 1 ||
@@ -252,7 +252,7 @@ void playRoulette(int *money) {
     while(1) {
         printf("Type 'X' to exit Roullete or 'B' to bet: \n");
         scanf(" %c", &exit);
-        while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
+        while ((c = getchar()) != '\n' && c != EOF); // Clear buffer
 
         if(exit == 'B'|| exit == 'b') {
             printf("Make your bet (min. $50)\n");
@@ -339,13 +339,13 @@ void playAdivinha(int *money) {
     while(1) {
         printf("Type 'X' to exit Guess the Number or 'B' to bet: \n");
         scanf(" %c", &exit);
-        while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
+        while ((c = getchar()) != '\n' && c != EOF); // Clear buffer
 
         if(exit == 'B'|| exit == 'b') {
             printf("Make your bet (min. $10)\n");
             printf("Current balance: $%d\n", *money);
             scanf("%d", &bet);
-            while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
+            while ((c = getchar()) != '\n' && c != EOF); // Clear buffer
 
             if(bet < 10) {
                 printf("The minimum bet is $10, try again.\n\n");
