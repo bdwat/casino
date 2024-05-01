@@ -32,6 +32,7 @@ char* cavalos() {
     return cavaloVencedor;
 }
 
+// Função para liberar a memória alocada dinamicamente para o cavalo vencedor
 void free_cavaloVencedor(char* cavaloVencedor) {
     free(cavaloVencedor);
 }
@@ -46,7 +47,7 @@ void jogarCorridaCavalos(int *dinheiro) {
 
         if (sair == 'A' || sair == 'a') {
             printf("Faça a sua aposta (mínimo $150)\n");
-            printf("Saldo disponível: %d\n", *dinheiro);
+            printf("Saldo disponível: $%d\n", *dinheiro);
             scanf("%d", &aposta);
             while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
 
@@ -102,7 +103,7 @@ void jogarBlackJack(int *dinheiro) {
     while(1){
         int cartas[12] = {1,2,3,4,5,6,7,8,9,10,10,10};
         int cartasUser = 0, cartasCasa = 0, decisao, aposta;
-        float blackJack, vitoria, raiseBom, raiseRuim, apostaRaise; 
+        float blackJack, vitoria, raiseBom, raiseRuim, apostaRaise; // Corrigido para float
         char sair;
 
         cartasCasa = 0;
@@ -236,7 +237,6 @@ void jogarBlackJack(int *dinheiro) {
             continue;
         }
     }
-    printf("GAME OVER");
 }
 
 void jogarRoulette(int *dinheiro) {
@@ -251,7 +251,7 @@ void jogarRoulette(int *dinheiro) {
 
         if(sair == 'A' || sair == 'a') {
             printf("Faça a sua aposta (min. $50)\n");
-            printf("Saldo disponível: %d\n", *dinheiro);
+            printf("Saldo disponível: $%d\n", *dinheiro);
             scanf("%d", &aposta);
 
             if(aposta < 50) {
@@ -319,7 +319,6 @@ void jogarRoulette(int *dinheiro) {
             continue;
         }
     }
-    printf("O dinheiro acabou!\nGAME OVER\n");
 }
 
 void jogarAdivinha(int *dinheiro) {
@@ -334,7 +333,7 @@ void jogarAdivinha(int *dinheiro) {
 
         if(sair == 'A' || sair == 'a') {
             printf("Faça a sua aposta (min. $10)\n");
-            printf("Saldo disponível: %d\n", *dinheiro);
+            printf("Saldo disponível: $%d\n", *dinheiro);
             scanf("%d", &aposta);
             while ((c = getchar()) != '\n' && c != EOF); // Limpar o buffer do teclado
 
@@ -387,7 +386,7 @@ void jogarAdivinha(int *dinheiro) {
 int main() {
     int decisao, dinheiro = 500;
     while(dinheiro >= 50) {
-        printf("Saldo disponível: %d\n", dinheiro);
+        printf("Saldo disponível: $%d\n", dinheiro);
         printf("Escolha o que jogar:\n");
         printf("1. BlackJack  2. Roleta  3. Corrida de Cavalos  4.Adivinha  5. Sair\n");
         scanf("%d", &decisao);
@@ -402,6 +401,7 @@ int main() {
             jogarAdivinha(&dinheiro);
         } else if(decisao == 5) {
             printf("Saindo do cassino...\n");
+            printf("Saldo final: $%d",dinheiro);
             break;
         } else {
             printf("Escolha inválida, tente novamente.\n");
