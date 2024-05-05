@@ -10,7 +10,6 @@
 #define clrscr() printf("\e[1;1H\e[2J")
 #endif
 
-//função para impedir o usuário entrar com caracteres alfabéticos
 int decisaoNumerica() {
     char entrada[100];
     int decisao;
@@ -263,7 +262,7 @@ void jogarBlackJack(int *dinheiro) {
                             printf("Soma da casa = %d\n", cartasCasa);
                             break;
                         }else{
-                            printf("Comando inválido");
+                            printf("Comando inválido\n");
                             continue;
                         }
                     }
