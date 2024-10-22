@@ -1,13 +1,14 @@
-#include "control/decisaonumerica.c"
-#include "control/corridacavalos.c"
-#include "control/blackjack.c"
-#include "control/roleta.c"
-#include "control/adivinha.c"
-#include "control/crash.c"
+#include "control/headers/decisaonumerica.h"
+#include "control/headers/corridacavalos.h"
+#include "control/headers/blackjack.h"
+#include "control/headers/roleta.h"
+#include "control/headers/adivinha.h"
+#include "control/headers/crash.h"
 
 int main() {
     int decisao;
     int dinheiro = 500;
+    
     while(dinheiro >= 50) {
         printf("Saldo disponível: $%d\n\n", dinheiro);
         printf("Escolha o que jogar:\n");

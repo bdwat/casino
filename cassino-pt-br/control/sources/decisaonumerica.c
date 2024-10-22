@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "../headers/decisaonumerica.h"
 
 int decisaoNumerica() {
     char entrada[100];
